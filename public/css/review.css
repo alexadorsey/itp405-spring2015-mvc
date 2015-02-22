@@ -1,0 +1,67 @@
+body {
+    padding-top: 50px;
+    text-align: center;
+}
+
+#info{
+    margin-top: 10px;
+}
+
+#review {
+    text-align:left;
+    float: left;
+    margin-left: 50px;
+    margin-top:-15px;
+}
+
+#reviews-list {
+    text-align: left;
+    float:right;
+    width: 600px;
+    margin-right: 50px;
+    margin-top:-15px;
+}
+
+#rating {
+    color: green;
+    font-size: 15pt;
+}
+
+#rating-title {
+    font-size: 17pt;
+    font-weight: bold;
+}
+
+.submit-btn {
+    border: none;
+    background-color: transparent;
+}
+
+.submit-btn:hover {
+  color:gray;
+}
+
+#dvd-header {
+    text-align:left;
+    font-size: 35pt;
+}
+
+.dvd-info {
+    text-align: left;
+    float:left;
+    margin: 5px 50px 0px 4px;
+    color: #444;
+}
+
+br{
+    background-color:blue;
+}
+
+#review p {
+    margin-top: 20px;
+    margin-bottom: 13px;
+}
+
+#messages p{
+    margin: 0px;
+}
