@@ -17,3 +17,5 @@ Route::get('/dvds', 'DvdController@results');
 // DVD Review Page
 Route::get('/dvds/{id}', 'DvdController@review');
 Route::post('/dvds/store', 'DvdController@storeDvd');
+
+?>
