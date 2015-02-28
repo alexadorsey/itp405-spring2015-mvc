@@ -1,16 +1,24 @@
 body {
   padding-top: 50px;
   font-size: 14pt;
-}
-
-.box {
-  padding: 40px 15px;
   text-align: center;
 }
 
+.box {
+  padding: 0px 70px;
+  text-align: center;
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 650px;
+}
+
 .box form {
-  padding-top: 30px;
+  padding-top: 0px;
   font-size: 14pt;
+  text-align: left;
+  float:left;
+  padding-left: 20px;
 }
 
 .box form span {
@@ -36,4 +44,25 @@ select {
 
 .result {
   padding-top: 50px;
+}
+
+#genre-search {
+  width: 200px;
+  font-size: 11pt;
+  border-right: 1px solid #e3e3e3;
+  padding-right: 10px;
+  float:left;
+  width:50%
+}
+
+#genre-search p {
+  margin: 2px;
+}
+
+#title-search {
+  width: 200px;
+  font-size: 11pt;
+  padding-right: 10px;
+  float:left;
+  width:50%
 }

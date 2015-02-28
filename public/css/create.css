@@ -1,0 +1,26 @@
+body {
+  padding-top: 50px;
+  font-size: 14pt;
+  text-align: center;
+}
+
+
+form {
+    width: 600px;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 90px;
+}
+
+form p {
+    margin: 30px;
+}
+
+#submit-btn {
+    margin-left: 150px;
+}
+
+button{
+  border:none;
+  background-color: transparent;
+}

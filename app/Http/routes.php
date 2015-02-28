@@ -1,19 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+use Illuminate\Http\Request;
+use App\Models\Dvd;
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/dvds/search', 'DvdController@search');
+// DVD Pages with Eloquent
+Route::get('/dvds/create', 'DvdEloquentController@create');
+Route::post('/dvds/createNew', 'DvdEloquentController@createNew');
+Route::get('/genres/{genre_name}/dvds', 'DvdEloquentController@genres');
+
+// DVD Search Page
+Route::get('/dvds/search', 'DvdEloquentController@search');
 Route::get('/dvds', 'DvdController@results');
+
+// DVD Review Page
 Route::get('/dvds/{id}', 'DvdController@review');
 Route::post('/dvds/store', 'DvdController@storeDvd');

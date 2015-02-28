@@ -10,9 +10,9 @@
 <body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
+		<div class="header">
 			<div class="navbar-header">
-				<span class="navbar-brand">HW 5: Two-page Dvd search with Laravel</span>
+				<span class="navbar-brand">HW 6: DVD Pages with Eloquent</span>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 			</div>
