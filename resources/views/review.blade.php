@@ -25,6 +25,40 @@
         <div style="clear: both"></div>
         <hr/>
         
+        <div id="rotten-tomatoes">
+            <h2><u>Rotten Tomatoes</u></h2>
+            @if (sizeof($movie) == 0)
+                <p>No data for this movie.</p>
+            @else
+                <img id="poster" src="{{ $movie->posters->original }}">
+                <div id="rt-info">
+                    <h4>Critics Score:</h4>
+                    <p class="score-num" id="critics-num">
+                        @if ($movie->ratings->critics_score == -1)
+                            --
+                        @else
+                            {{ $movie->ratings->critics_score }}
+                        @endif
+                    </p>
+                    <h4>Audience Score:</h4>
+                    <p class="score-num" id="audience-num">
+                        @if ($movie->ratings->audience_score == 0)
+                            --
+                        @else
+                            {{ $movie->ratings->audience_score }}
+                        @endif
+                    </p>
+                </div>
+                <div style="clear:both"></div>
+                <h4>Runtime: {{ floor($movie->runtime/60) }} hour(s) {{ $movie->runtime%60 }} minutes</h4>
+                <h4>Main Cast:</h4>
+                @foreach ($movie->abridged_cast as $actor)
+                    <p id="actor">{{ $actor->name }}</p>
+                @endforeach
+            @endif
+            
+        </div>
+        
         <div id="review">
             <h2><u>Your Review</u></h2>
             <form method="post" action="{{ url("dvds/store") }}">

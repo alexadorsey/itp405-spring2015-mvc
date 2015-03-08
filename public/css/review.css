@@ -7,19 +7,28 @@ body {
     margin-top: 10px;
 }
 
+
+#rotten-tomatoes {
+    text-align: left;
+    float: left;
+    margin-top:-15px;
+    width: 30%;
+}
+
 #review {
     text-align:left;
     float: left;
-    margin-left: 50px;
     margin-top:-15px;
+    width: 35%;
 }
 
 #reviews-list {
     text-align: left;
-    float:right;
-    width: 600px;
-    margin-right: 50px;
+    float:left;
+    width: 35%;
     margin-top:-15px;
+    height: 500px;
+    overflow: scroll;
 }
 
 #rating {
@@ -64,4 +73,35 @@ br{
 
 #messages p{
     margin: 0px;
+}
+
+
+#actor {
+    margin-left: 20px;
+}
+
+#poster {
+    width: 100px;
+    height: 150px;
+    float:left;
+}
+
+#rt-info {
+    float:left;
+    margin-left:10px;
+}
+
+.score-num {
+    text-align: center;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#critics-num {
+    color: blue;
+}
+
+#audience-num {
+    color: purple;
 }

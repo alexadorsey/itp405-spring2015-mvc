@@ -5,6 +5,7 @@ use App\Models\Dvd;
 
 Route::get('/', 'WelcomeController@index');
 
+
 // DVD Pages with Eloquent
 Route::get('/dvds/create', 'DvdEloquentController@create');
 Route::post('/dvds/createNew', 'DvdEloquentController@createNew');

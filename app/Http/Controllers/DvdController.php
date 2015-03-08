@@ -6,11 +6,7 @@ use App\Models\DvdQuery;
 use App\Http\Controllers\View;
 
 use App\Models\Dvd;
-use App\Models\Label;
-use App\Models\Sound;
-use App\Models\Genre;
-use App\Models\Rating;
-use App\Models\Format;
+use App\Services\RottenTomatoes;
 
 class DvdController extends Controller {
     
@@ -26,20 +22,6 @@ class DvdController extends Controller {
             'genre' => $genre,
             'rating' =>$rating,
             'dvds' => $dvds
-        ]);
-    }
-
-    
-    // DVD Review Page
-    public function review($id) {
-        $dvd = (new DvdQuery())->getAllInfo($id);
-        $dvds = (new DvdQuery())->getDvds();
-        $reviews = (new DvdQuery())->getReviews($id);
-        return view('review', [
-            'dvd' => $dvd[0],
-            'dvds' => $dvds,
-            'dvd_id' => $id,
-            'reviews' => $reviews
         ]);
     }
     
@@ -59,6 +41,28 @@ class DvdController extends Controller {
                 ->withInput()
                 ->withErrors($validation);
         }
+    }
+    
+    
+    /* DVD Rotten Tomatoes Search HW */
+    public function review($id) {
+        $dvd = (new DvdQuery())->getAllInfo($id);
+        $dvds = (new DvdQuery())->getDvds();
+        $reviews = (new DvdQuery())->getReviews($id);
+        
+        $rt_dvd = Dvd::find($id);
+        $title = strtolower($rt_dvd->title);
+        
+        // Search for the DVD in the Rotten Tomatoes database
+        $movie = RottenTomatoes::search($title);
+        
+        return view('review', [
+            'dvd' => $dvd[0],
+            'dvds' => $dvds,
+            'dvd_id' => $id,
+            'reviews' => $reviews,
+            'movie' => $movie
+        ]);
     }
     
 }
